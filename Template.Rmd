@@ -30,9 +30,9 @@ course_of_study3: "Wirtschaftswissenschaft"
 
 date: "31.03.2020"
 
-university: "Leibniz University Hannover"
-department: "Faculty of Economics and Management" 
-institute: "Institute for Banking and Finance"
+university: "Leibniz Universität Hannover"
+faculty: "Wirtschaftswissenschaftliche Fakultät" 
+institute: "Institut für Banken und Finanzierung"
 advisor: "Prof. Dr. Maik Dierkes"
 altadvisor: "M.Sc. Sebastian Schrön"            
 module: "Hedge Funds: Trading Strategies and Performance Evaluation"
@@ -47,6 +47,7 @@ output:
     toc: true
     toc_depth: 3
     highlight: tango
+    keep_tex: false
 geometry: "a4paper, left=3cm,right=5cm,top=3cm,bottom=3cm"
 bibliography: bibliography.bib
 csl: CSL/apa.csl
@@ -63,7 +64,6 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE)
 
 sharkdata <- "https://raw.githubusercontent.com/allisonhorst/stats-illustrations/master/other-stats-artwork/shark_raw.csv"
 
-library(here)
 library(tidyverse)
 library(lubridate)
 library(nycflights13)
@@ -95,9 +95,12 @@ This is the easiest way to include a figure from a local file:
 ![Faces of debugging. Source: [Allison Horst](https://github.com/allisonhorst/stats-illustrations)  ](FIGURES/debugging.jpg)
 
 
-# Tables and citations
+# Tables
 
-## Tables
+## Markdown tables
+
+
+## Kable
 
 
 
@@ -107,19 +110,26 @@ This is an example table with kable, including a caption:
 
 kable(flights[1:5,1:5],
       booktabs = TRUE,
-      caption = "Example Table.") %>%
-  kable_styling(latex_options = "hold_position")
+      caption = "Example Table.") 
 
 ```
 
-## Citations
+## LaTeX tables
+
+# Citations
+
+## Citations in Markdown
 
 Dummy citation to force RMarkdown to produce references: @wickham_r_2016
 
+## Citations in LaTeX
+
+## Citation styles
+
 # Conclusion
 
-In conclusion, I think this works really great. Great job, Brian :-)
 
-\newpage
 
-# References
+
+
+# Literature
