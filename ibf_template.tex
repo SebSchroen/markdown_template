@@ -180,6 +180,10 @@ $if(tables)$
 \usepackage{calc} % for calculating minipage widths
 $if(beamer)$
 \usepackage{caption}
+
+
+
+
 % Make caption package work with longtable
 \makeatletter
 \def\fnum@table{\tablename~\thetable}
@@ -347,6 +351,10 @@ $if(logo)$
 \logo{\includegraphics{$logo$}}
 $endif$
 $endif$
+
+\usepackage{caption}
+\setlength{\abovecaptionskip}{5pt}
+\setlength{\belowcaptionskip}{5pt}
 
 \begin{document}
 

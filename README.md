@@ -1,19 +1,45 @@
 # Leibniz University Hannover RMarkdown Template
 
-This is a simplified thesis template in compliance with the formal guidelines of the School of Economics and Management at Leibniz University Hannover. The template was inspired by the [thesisdown package](https://github.com/ismayc/thesisdown), but is simplified in many dimensions. To change the style, store the file in the designated folder and change the yaml header accordingly.
+This is a simplified thesis template in compliance with the formal guidelines of the School of Economics and Management at Leibniz University Hannover. 
+The template was inspired by the [thesisdown package](https://github.com/ismayc/thesisdown), but is simplified in many dimensions. 
+The template explains how to handle those adjustments.
 
-## Preparation
+## Prerequisites
+
+### RStudio/ RMarkdown
+
+Make sure to have the latest version of RStudio installed on your computer. 
+The template will work with RStudio 1.3 upwards.
+To make sure that all rmarkdown depencies are installed, install the package `rmarkdown` as follows:
+
+```
+install.packages(rmarkdown)
+
+```
 
 
+### LaTeX
+Before using the template, make sure to have a working LaTeX installation on your computer. 
+By far the easiest way is the R package `tinytex`:
 
+```
+install.packages(tinytex)
 
-## Acknowledgement
+tinytex::install_tinytex()
+
+```
+This might take a while. 
+Make sure to restart RStudio after installation. 
+
+**Note: The first compiling of the document might take a couple of minutes because tinytex installs package depencies in the background.**
+
 
 
 ## Citation style
 
-The folder CSL contains the citation style, the default is APA (American Psychological Association) as provided by [Zotero](https://www.zotero.org/styles/). Other specific styles are available in the [official repository](https://github.com/citation-style-language/styles#readme) for Citation Style Language citation styles.
-
+The folder CSL contains the citation style, the default is APA (American Psychological Association) as provided by [Zotero](https://www.zotero.org/styles/). 
+Other specific styles are available in the [official repository](https://github.com/citation-style-language/styles#readme) for Citation Style Language citation styles.
+To change the style, store the file in the designated folder and change the yaml header accordingly.
 
 ## License
 
