@@ -32,12 +32,12 @@ $for(classoption)$
 $endfor$
 ]{$documentclass$}
 
-\usepackage{longtable,booktabs}
-$if(fontfamily)$
-\usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
-$else$
+
 \usepackage{lmodern}
-$endif$
+
+
+\usepackage{longtable,booktabs}
+
 $if(linestretch)$
 \usepackage{setspace}
 $endif$
