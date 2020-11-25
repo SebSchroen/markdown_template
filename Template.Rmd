@@ -37,7 +37,7 @@ advisor: "Prof. Dr. Maik Dierkes"
 altadvisor: "M.Sc. Sebastian Schrön"            
 module: "Hedge Funds: Trading Strategies and Performance Evaluation"
 module_number: "374040"
-#Change to "de" for German Inhaltsverzeichnis, Tabellenverzeichnis etc.
+#Change to "de" for German Inhaltsverzeichnis, Tabellenverzeichnis etc. En-us should be used if you write in English
 lang: "en-us"
 #
 output: 
@@ -64,27 +64,86 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE)
 
 sharkdata <- "https://raw.githubusercontent.com/allisonhorst/stats-illustrations/master/other-stats-artwork/shark_raw.csv"
 
-library(tidyverse)
-library(lubridate)
-library(nycflights13)
+
 library(knitr)
-library(kableExtra)
+
 
 ```
 
 # Introduction
 
+This simplified RMarkdown template is designed for students at the Leibniz University Hannover (LUH) to prepare their (seminar) thesis. 
+The cover sheet and the statutory declaration (ehrenwörtliche Erklärung) are in compliance with the requirements of the Student Dean's office. 
+Margins, font size and citation style are in line with the formal guidelines of the Institute of Banking and Finance and may be adapted to the requirements at other LUH institutes. 
 
+
+# Language
+
+## Switch from English to German
+
+This template supports theses in German and English. To switch between them, use the `lang` parameter in the yaml header. 
+To write in American English (German), use "en-us" ("de"). This affects the name of the table of contents, list of figures, list of tables and the statutory declaration. However, this does not change the title of the references, this has to be adapted manually.
+
+## RStudio spell-checking
+
+From RStudio 1.3 upwards, the RStudio IDE offers live spell checking. 
+To change it from English to German, go to Tools -> Global Options -> Spelling and change the main dictionary to German. 
+Live spelling doesn't work for German (new) just yet, but in most cases, the German dictionary will suffice. 
+Make sure to check "use live spell checking" after changing the dictionary. The change will affect the output after you save the document. 
+In order to install a full German dictionary for spelling suggestions, follow these steps:
+
+  1. Download the German dictionary files [de_DE_frami.aff](https://cgit.freedesktop.org/libreoffice/dictionaries/tree/de/de_DE_frami.aff) and [de_DE_frami.dic](https://cgit.freedesktop.org/libreoffice/dictionaries/tree/de/de_DE_frami.dic) from the libreoffice repository (free!).
+  2. Click [here](https://support.rstudio.com/hc/en-us/articles/200551916-Spelling-Dictionaries) to add them to RStudio by copying them into the correct folder. This depends on your operating system, but the explanation on the website is pretty thorough.
+  
+  
+# Equations
+
+
+## Inline equations
+
+RMarkdown and LaTex are the perfect combination for theses with math equations. 
+In this case, RMarkdown relies on the syntax of LaTeX when typesetting equations, so it is hard to distinguish between the two languages.
+To add an equation to the text, simply use $e = mc^2$. 
+There are many more expressions, just download the corresponding cheat sheet:
+
+[LaTeX cheat sheet](https://wch.github.io/latexsheet/latexsheet.pdf)
+
+
+
+
+## Block equations
+
+Sometimes, equations are too central to be written in a line of text.
+In this case, use block equations.
+RMarkdown does this by doing the following:
+
+$$ \overline{x} = \frac{1}{N} \sum_{i = 1}{N} x_i $$
+
+This has one major disadvantage, namely that there are no numbers for the equations.
+Numbered equations are useful if you want to refer to the equation later on. 
+Since the syntax above is 99% LaTeX anyway, just use the native LaTeX equation environment:
+
+\begin{equation} 
+  \label{equation_arithmetic_mean}
+  \overline{x} = \frac{1}{N} \sum_{i = 1}{N} x_i 
+\end{equation}
+
+If you want to deactivate enumeration, use equation* within the braces. 
+Use the label to refer to this important equation, as follows:
+Equation \eqref{equation_arithmetic_mean} is the arithmetic mean.
+There are other equation environments, e.g. array for more complicated expressions. 
 
 # Figures
 
-## Figures from ggplot
+## Figures from R plots
 
 
-```{r example_figure, fig.cap = "A dangerous animal. Source: [Allison Horst.](https://github.com/allisonhorst/stats-illustrations)", fig.height = 3, fig.width = 6}
+```{r example_figure, fig.cap = "A dangerous animal. Source: [Allison Horst.](https://github.com/allisonhorst/stats-illustrations)", fig.height = 4, fig.width = 6}
 
-data <- read_csv(sharkdata)
-ggplot(data=data, aes(x=x, y = y)) + geom_point(size=0.1)
+data <- read.csv(sharkdata)
+
+plot(data$x, data$y, xlab = "", ylab = "", axes = FALSE)
+
 ```
 
 
@@ -97,7 +156,7 @@ This is the easiest way to include a figure from a local file:
 
 # Tables
 
-## Markdown tables
+
 
 
 ## Kable
@@ -106,7 +165,7 @@ This is the easiest way to include a figure from a local file:
 
 This is an example table with kable, including a caption:
 
-```{r example_table}
+```{r example_table, eval = FALSE}
 
 kable(flights[1:5,1:5],
       booktabs = TRUE,
@@ -115,6 +174,19 @@ kable(flights[1:5,1:5],
 ```
 
 ## LaTeX tables
+
+
+
+# Markdown tables
+
+| First Header  | Second Header | Third Header         |
+| :------------ | :-----------: | -------------------: |
+| First row     | Data          | Very long data entry |
+| Second row    | **Cell**      | *Cell*               |
+| Third row     | Cell that spans across two columns  ||
+
+Table: Your Caption
+
 
 # Citations
 
@@ -126,7 +198,17 @@ Dummy citation to force RMarkdown to produce references: @wickham_r_2016
 
 ## Citation styles
 
-# Conclusion
+# Debugging
+
+## Debugging R Code
+
+## Debugging LaTeX issues
+
+
+
+
+# How to get startet
+
 
 
 
