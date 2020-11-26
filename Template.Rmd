@@ -34,9 +34,10 @@ university: "Leibniz Universität Hannover"
 faculty: "Wirtschaftswissenschaftliche Fakultät" 
 institute: "Institut für Banken und Finanzierung"
 advisor: "Prof. Dr. Maik Dierkes"
-altadvisor: "M.Sc. Sebastian Schrön"            
-module: "Hedge Funds: Trading Strategies and Performance Evaluation"
-module_number: "374040"
+altadvisor: "Supervisor"            
+module: "Title of the Lecture/Seminar"
+# Belegnummer:
+module_number: "123465"
 #Change to "de" for German Inhaltsverzeichnis, Tabellenverzeichnis etc. En-us should be used if you write in English
 lang: "en-us"
 #
@@ -76,12 +77,6 @@ library(knitr)
 ```
 
 
-
-\newpage
-One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought. It wasn't a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls. A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weather. Drops of rain could be heard hitting the pane, which made him feel quite sad. "How about if I sleep a little bit longer and forget all this nonsense", he thought, but that was something he was unable to do because he was used to sleeping on his right, and in his present state couldn't get into that position. However hard he threw himself onto his right, he always rolled back to where he was. He must have tried it a hundred times, shut his eyes so that he wouldn't have to look at the floundering legs, and only stopped when he began to feel a mild, dull pain there that he had never felt before. "Oh, God", he thought, "what a strenuous career it is that I've chosen! Travelling day in and day out. Doing business like this takes much more effort than doing your own business at home, and on top of that there's the curse of travelling, worries about making train connections, bad and irregular food, contact with different people all the time so that you can never get to know anyone or become friendly with them. It can all go to Hell!" He felt a slight itch up on his belly; pushed himself slowly up on his back towards the headboard so that he could lift his head better; found where the itch was, and saw that it was covered with lots of little white spots which he didn't know what to make of; and when he tried to feel the place with one of his legs he drew it quickly back because as soon as he touched it he was overcome by a cold shudder. He slid back into his former position. "Getting up early all the time", he thought, "it makes you stupid. You've got 
-
-
-\newpage
 # Introduction
 
 This simplified RMarkdown template is designed for students at the Leibniz University Hannover (LUH) to prepare their (seminar) thesis. 
@@ -94,7 +89,8 @@ Margins, font size and citation style are in line with the formal guidelines of 
 ## Switch from English to German
 
 This template supports theses in German and English. To switch between them, use the `lang` parameter in the yaml header. 
-To write in American English (German), use "en-us" ("de"). This affects the name of the table of contents, list of figures, list of tables and the statutory declaration. However, this does not change the title of the references, this has to be adapted manually.
+To write in American English (German), use "en-us" ("de"). This affects the name of the table of contents, list of figures, list of tables and the statutory declaration. 
+However, this does not change the title of the references, this has to be adapted manually.
 
 ## RStudio spell-checking
 
@@ -155,7 +151,9 @@ The result is the same, but you get a numbered equation:
 
 
 If you want to deactivate enumeration, use equation* within the braces. 
-Use the label to refer to this important equation by using `\eqref{label}`.^[`\eqref{label}` directly wraps the equation number with parentheses. `\ref{label}` can be used for all kinds of cross-referencing.]
+Use the label to refer to this important equation by using `\eqref{label}`.^[`\eqref{label}` directly wraps the equation number with parentheses. 
+`\ref{label}` can be used for all kinds of cross-referencing.
+This is pure LaTeX, doing this in Markdown would require additional packages.]
 Equation \eqref{equation_arithmetic_mean} is the arithmetic mean.
 There are other equation environments, e.g. array for more complicated expressions. 
 
@@ -208,7 +206,7 @@ example_data <- read.csv("DATA/example_data.csv")
 kable(example_data,
       booktabs = TRUE,
       digits = 2,
-      caption = "Example Table.") 
+      caption = "Example Table with kable.") 
 ```
 
 
@@ -242,7 +240,7 @@ This is how it looks like once you write it outside a code chunk:
 | Second col. |    centered   | data  |
 | Third col.  | right-aligned | here  |
 
-Table: Your Caption.
+Table: Example Table in Markdown.
 
 
 ## LaTeX tables
@@ -300,7 +298,7 @@ To cite in parentheses, just wrap the bib-key in squared brackets `[@wickham_r_2
 You can add multiple entries by separating them with a comma and also write text before and after the reference, for example `[see @wickham_r_2016, p. 109]`.^[Note that LaTeX citation, i.e. `\cite{}` and `\citep{}` are also fully supported.]
 The following example illustrates this: 
 
-A three factor model including a size and a value factor improves the explanatory power of the CAPM [see @fama_common_1993, p. 4].
+A three factor model including a size and a value factor improves the explanatory power of the CAPM [see @fama_common_1993, p. 4.].
 
 
 ## Footnotes
@@ -350,7 +348,7 @@ A direct support in RStudio is on the way.
 While the advantages of this template are obvious (looks great, conventient support of equations, tables and figures), programming is prone to errors which won't happen if you work with WYSIWYG software (e.g. Word). 
 Even worse, the combination of R Code and text in this document has two sources of error, that is the R Code itself and the typesetting RMarkdown/LaTeX. 
 
-![Faces of debugging. Source: [Allison Horst](https://github.com/allisonhorst/stats-illustrations)  ](FIGURES/debugging.jpg)
+![Faces of debugging. Source: [Allison Horst.](https://github.com/allisonhorst/stats-illustrations)  ](FIGURES/debugging.jpg)
 
 When you want to knit the document, these two sources of error can be annoying.
 First, it is reasonable to rule out R errors. 
@@ -364,7 +362,7 @@ Make sure to eradicate all potential R errors this way.^[A common error which wo
 Unfortunately, the error messages for LaTeX errors are not always straightforward, users typically separate informative from non-informative errors. 
 In most cases, the errors are helpful, for example:
 
-![LaTeX error](FIGURES/LaTeX_error.PNG)
+![Debugging LaTeX errors.](FIGURES/LaTeX_error.PNG)
 
 "Could not find bibliography file: BIB/wexample_bibliography.bib" means that there is probably something wrong with the bib-file I provided, there is obviously a typo.
 Unfortunately, RMarkdown **almost always** tells you that you have no LaTeX installation. 
