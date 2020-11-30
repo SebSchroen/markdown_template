@@ -2,7 +2,7 @@
 # Required Information --------------------------------------------------------
 # change lines 4 - 18
 title: "Thesis Title"
-author1: "Max Mustermann"
+author1: "Melissa Musterfrau"
 adress_street_and_no1: "Königsworther Platz 1"
 postcode1: "30167"
 place1: "Hannover"
@@ -11,7 +11,7 @@ semester1: "1"
 course_of_study1: "Wirtschaftswissenschaft"
 
 # if you write in a team, put the data of the second author here:
-author2: "Melissa Musterfrau"
+author2: "Max Mustermann"
 adress_street_and_no2: "Königsworther Platz 2"
 postcode2: "30167"
 place2: "Hannover"
