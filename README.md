@@ -41,6 +41,10 @@ The folder CSL contains the citation style, the default is APA (American Psychol
 Other specific styles are available in the [official repository](https://github.com/citation-style-language/styles#readme) for Citation Style Language citation styles.
 To change the style, store the file in the designated folder and change the yaml header accordingly.
 
+## Acknowledgement
+
+The contribution of Brian von Knoblauch and Leon Kowalke to this template is gratefully acknowledged. 
+
 ## License
 
 This template is based on the [pandoc default template](https://github.com/jgm/pandoc-templates) by John MacFarlane. The template is licensed as follows:
