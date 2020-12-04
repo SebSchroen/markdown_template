@@ -19,7 +19,7 @@ matriculation_number2: "7654321"
 semester2: "2"
 course_of_study2: "Wirtschaftswissenschaft"
 
-# if you write in a team, put the data of the third author here:
+# if you write in a team, put the data of the third author here or delete this author if you work in a team of 2 students:
 author3: "Maxi Musterperson"
 adress_street_and_no3: "Königsworther Platz 3"
 postcode3: "30167"
