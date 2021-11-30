@@ -1,0 +1,145 @@
+---
+title: "Thesis Title"
+author1: "Max Mustermann"
+adress_street_and_no1: "Königsworther Platz 1"
+postcode1: "30167"
+place1: "Hannover"
+matriculation_number1: "1234567"
+semester1: "1"
+course_of_study1: "Wirtschaftswissenschaft"
+# if you write in a team, put the data of the second author here:
+author2: "Melissa Musterfrau"
+adress_street_and_no2: "Königsworther Platz 2"
+postcode2: "30167"
+place2: "Hannover"
+matriculation_number2: "7654321"
+semester2: "2"
+course_of_study2: "Wirtschaftswissenschaft"
+# if you write in a team, put the data of the third author here. If you write in a team of two, just remove the next 7 lines:
+author3: "Maxi Musterperson"
+adress_street_and_no3: "Königsworther Platz 3"
+postcode3: "30167"
+place3: "Hannover"
+matriculation_number3: "1235813"
+semester3: "3"
+course_of_study3: "Wirtschaftswissenschaft"
+date: "31.03.2022"
+university: "Leibniz University Hannover"
+faculty: "School of Economics and Management" 
+institute: "Institute of Banking and Finance"
+advisor: "Prof. Dr. Maik Dierkes"
+altadvisor: "M.Sc. Sebastian Schrön"            
+module: "Hedge Funds: Trading Strategies and Performance Evaluation"
+# Belegnummer:
+module_number: "374040"
+lang: "en-us"
+output: 
+  pdf_document:
+    template: ibf_template.tex
+    extra_dependencies:
+    - dcolumn
+    toc: true
+    toc_depth: 3
+    highlight: tango
+    keep_tex: false
+    number_sections: true
+geometry: "a4paper, left=2cm,right=5cm,top=3cm,bottom=3cm"
+bibliography: BIB/example_bibliography.bib
+csl: CSL/apa.csl
+fontsize: 11pt
+linestretch: 1.5
+lof: true
+lot: true
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+```{r setup, include=FALSE, warning= FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE)
+
+
+
+sharkdata <- "https://raw.githubusercontent.com/allisonhorst/stats-illustrations/master/other-stats-artwork/shark_raw.csv"
+
+
+library(knitr)
+library(tidyverse)
+
+```
+
+# Introduction
+
+```{r child='01_Introduction.Rmd'}
+```
+
+# Language
+
+```{r child='02_Language.Rmd'}
+```
+
+# Equations
+
+```{r child='03_Equations.Rmd'}
+```
+
+# Figures and Tables
+
+```{r child='04_Figures_and_Tables.Rmd'}
+```
+
+
+# Citations
+
+```{r child='05_Citations.Rmd'}
+```
+
+# Debugging
+
+```{r child='06_Debugging.Rmd'}
+```
+
+# Additional LaTeX features
+
+Some experienced LaTeX users might feel that the basic functions of this template are insufficient.
+To add packages, just add them to the extra dependencies in the header in the following way:
+
+    extra_dependencies:
+        - dcolumn
+        - newpackage1
+        - newpackage2
+
+# How to get started
+
+Now to get started and put this template to use, just save it in your working directory, get rid of all the stuff above and start with your thesis.
+This document is work in progress, so if you encounter any unsolvable issues, write an e-mail to [Sebastian Schrön](mailto:sebastian.schroen@finance.uni-hannover.de)
+
+
+\appendix
+
+# Contributions
+
+If your thesis needs an appendix, simply use `\appendix` to separate the main body of your thesis from the appendix.
+The sections will have alphabetic enumeration instead of Arabic numbers to indicate appendices.
+Ideally, use `\newpage` to start the appendix on a new page.
+
+If you write as a group, one appendix should be dedicated to the contribution of each student.
+Please edit the following table accordingly to highlight which student contributed to which section:
+
+| Section | Student            |
+|--------:|--------------------|
+|       1 | Melissa Musterfrau |
+|     2.1 | Maxi Musterperson  |
+|     2.2 | Maxi Musterperson  |
+|     3.1 | Max Mustermann     |
+|     ... | ...                |
+
+Hint: Use the tablesgenerator.com for this table.
+
+Finally, please state whether you want a joint of individual evaluation of your thesis by altering the following sentence:
+
+We decided for a joint evaluation of the thesis.
+
+\newpage
+
+# Literature

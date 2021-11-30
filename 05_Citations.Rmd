@@ -1,0 +1,53 @@
+
+## Citations in Markdown
+
+For in-text citations, simply use `@bib_key`, where the `bib_key` is the key of your reference in the bibliography (explained below).
+For example, `@wickham_r_2016` will produce the following: @wickham_r_2016 is an outstanding introduction to data science with R.
+
+To cite in parentheses, just wrap the bib-key in squared brackets `[@wickham_r_2016]`.
+You can add multiple entries by separating them with a comma and also write text before and after the reference, for example `[see @wickham_r_2016, p. 109]`.[^3]
+The following example illustrates this:
+
+[^3]: Note that LaTeX citation, i.e. `\cite{}` and `\citep{}` are also fully supported.
+
+A three factor model including a size and a value factor improves the explanatory power of the CAPM [see @fama_common_1993, p. 4.].
+
+## Footnotes
+
+Instead of citing in parentheses, we recommend citation in footnotes.
+This is not mandatory, as long as you cite properly and include the pages.
+To include a footnote, just write `^[Content of the footnote]` and add the citation without the parentheses in the footnote, e.g.: `^[See @fama_common_1993, p. 4.]`.
+In your thesis, this should look as follows:
+
+A three factor model including a size and a value factor improves the explanatory power of the CAPM.[^4]
+
+[^4]: See @fama_common_1993, p. 4
+
+## Generating a bib-file and bib-keys
+
+In this example, the references are in the example file for the bibliography which come with the template.
+Once you start working on your thesis, you have to add your own literature to the bibliography, this requires a certain syntax.
+Instead of creating the bib-file manually, I recommend a reference manager.
+The easiest options are Zotero and Jabref.
+I recommend Zotero, because future RStudio releases will support Zotero directly (unfortunately, we're not there yet).
+
+To organize your library in Zotero, you can drag and drop pdf files or add new entries with common indicators such as ISBN or DOI.
+Once you gathered all the literature, just highlight the references, click right -\> Export Items to get to the following menu:
+
+![Creating a Zotero bibliography.](FIGURES/Zotero.PNG){width="100%"}
+
+Then select "BibTex" to save the .bib file in the folder BIB.
+Just adapt the `bibliography: BIB/example_bibliography.bib` statement in the header to use your file and you're done.
+
+One important drawback is that you have to use the key instead of the full title.
+Zotero creates bib-keys in the following way:
+
+1.  First author (last name)
+2.  First word of the title
+3.  Year of the reference.
+
+Each element is separated with `_`.
+Just look up `@fama_common_1993` in the bibliography below to see that.
+For now, it is straightforward to have the bib-file open in a text editor and copy the entries manually.
+A direct support in RStudio is on the way.
+**Note: Make sure to maintain the references in Zotero (reference type, authors etc.) to export them correctly to the bib-file.**

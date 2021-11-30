@@ -1,0 +1,18 @@
+
+## Switch from English to German
+
+This template supports theses in German and English. To switch between them, use the `lang` parameter in the yaml header. 
+To write in American English (German), use "en-us" ("de"). This affects the name of the table of contents, list of figures, list of tables and the statutory declaration. 
+However, this does not change the title of the references, this has to be adapted manually.
+
+## RStudio spell-checking
+
+From RStudio 1.3 upwards, the RStudio IDE offers live spell checking. 
+To change it from English to German, go to Tools -> Global Options -> Spelling and change the main dictionary to German. 
+Live spelling doesn't work for German (new) just yet, but in most cases, the German dictionary will suffice. 
+Make sure to check "use live spell checking" after changing the dictionary. The change will affect the output after you save the document. 
+In order to install a full German dictionary for spelling suggestions, follow these steps:
+
+  1. Download the German dictionary files [de_DE_frami.aff](https://cgit.freedesktop.org/libreoffice/dictionaries/tree/de/de_DE_frami.aff) and [de_DE_frami.dic](https://cgit.freedesktop.org/libreoffice/dictionaries/tree/de/de_DE_frami.dic) from the libreoffice repository (free!).
+  2. Click [here](https://support.rstudio.com/hc/en-us/articles/200551916-Spelling-Dictionaries) to add them to RStudio by copying them into the correct folder. This depends on your operating system, but the explanation on the website is pretty thorough.
+  

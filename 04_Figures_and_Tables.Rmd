@@ -1,0 +1,119 @@
+
+
+## Figures
+
+### Figures from local files or the internet
+
+Figures and tables are important tools to present results or illustrate important aspects of your thesis.
+Just as LaTeX, Word, OpenOffice or Pages, RMarkdown allows you to include figures from files such as .png or .pdf or websites.
+The syntax is quite simple, just use
+
+    ![Caption](Source){width=100%}
+
+The source can be a file on your computer like in the example below, or a web address.
+
+![Example figure, Source: [Allison Horst](https://github.com/allisonhorst/stats-illustrations).](FIGURES/rmarkdown_rockstar.png){width="75%"}
+
+## Figures from R plots
+
+Thanks to the unique combination of R Code and text, you can also directly present R plots and add a caption.
+Just see this example:
+
+```{r example_figure, fig.cap = "A dangerous animal. Source: [Allison Horst]( https://github.com/allisonhorst/stats-illustrations).", fig.height = 4, fig.width = 6}
+
+data <- read.csv(sharkdata)
+plot(data$x, data$y, xlab = "", ylab = "")
+
+```
+
+Rather than using `{width=75%}` to control the size of the figure, just use the chunk options above.
+In most cases this is trial and error to get the looks right[^2], so feel free to change the settings above.
+Note that the figure won't necessarily show up right below the chunk in order to manage the space efficiently.
+
+[^2]: For example, the shark looks far less dangerous (chubby, even), if you use `fig.height = 5` above.
+
+## Tables
+
+### kable
+
+Tables are another important tool to present information.
+RMarkdown provides several ways to include tables.
+A simple way to print data frames -- for example a table with summary statistics -- is the `knitr` function `kable` (presumably stands for "knit table").
+
+```{r example_table}
+example_data <- read.csv("DATA/example_data.csv")
+kable(example_data,
+      booktabs = TRUE,
+      digits = 2,
+      caption = "Example Table with kable.") 
+```
+
+The option `booktabs = TRUE` uses the LaTeX booktabs package which produces nice tables without vertical lines.
+The option `digits= 2` should be self-explanatory.
+To see more options, visit the documentation for `kable` or use the help function in your R console.
+
+### Markdown tables
+
+Markdown comes with a native syntax to set tables which is different from LaTeX or html, but very simple.
+Just to give you an example:
+
+    | A           |  Simple       | Table |
+    |-------------|:-------------:|------:|
+    | First col.  |  left-aligned | More  |
+    | Second col. |    centered   | data  |
+    | Third col.  | right-aligned | here  |
+
+    Table: Your Caption
+
+The `:` indicate the alignment of the table.
+This is how it looks like once you write it outside a code chunk:
+
+| A           |    Simple     | Table |
+|-------------|:-------------:|------:|
+| First col.  | left-aligned  |  More |
+| Second col. |   centered    |  data |
+| Third col.  | right-aligned |  here |
+
+: Example Table in Markdown.
+
+### LaTeX tables
+
+If you are used to LaTeX already, it might be natural to continue using LaTeX syntax for tables.
+RMarkdown supports this.
+
+    \begin{table}[]
+      \caption{Example Table in LaTex.}
+      \begin{tabular}{lcr}
+      \toprule
+      A           & LaTeX         & Table \\ \midrule
+      First col.  & left-aligned  & More  \\
+      Second col. & centered      & data  \\
+      Third col.  & right-aligned & here 
+      \end{tabular}
+    \end{table}
+
+Once you write this outside a chunk, this is how it will turn out:
+
+```{=tex}
+\begin{table}[!htp]
+  \caption{Example Table in LaTex.}
+  \begin{center}
+  \begin{tabular}{lcr}
+  \toprule
+  A           & LaTeX         & Table \\ \midrule
+  First col.  & left-aligned  & More  \\
+  Second col. & centered      & data  \\
+  Third col.  & right-aligned & here  \\ \bottomrule
+  \end{tabular}
+  \end{center}
+\end{table}
+```
+LaTeX tables come with a nice option called floats.
+By adding `!htp` between the brackets in `\begin{table}[!htp]`, you can tell LaTeX to put the table (h)ere, at the (t)op of the page or on its own (p)age.
+Those options will be prioritized in this order.
+
+### Tables generator
+
+Setting the tables manually is quite difficult.
+The website [tablesgenerator.com](https://www.tablesgenerator.com) is a nice interface to paste information into tables and make adjustments such as alignments etc.
+You can choose between LaTeX and Markdown tables, the functionalities of LaTeX are a little more advanced.

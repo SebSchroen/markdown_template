@@ -1,0 +1,13 @@
+This simplified RMarkdown template is designed for students at the Leibniz University Hannover (LUH) to prepare their (seminar) thesis. 
+The cover sheet and the statutory declaration (ehrenwörtliche Erklärung) are in compliance with the requirements of the Student Dean's office. 
+Margins, font size and citation style are in line with the formal guidelines of the Institute of Banking and Finance and may be adapted to the requirements at other LUH institutes. 
+
+
+This document is structured as a main document (Thesis.Rmd) with several child documents which are the main chapters. To knit the document, always knit the master document Thesis.Rmd. The code chunks
+
+
+"{r child='01_Introduction.Rmd'}"
+
+will then tell RMarkdown to include the child document "01_Introduction.Rmd" in the **same** folder as the main document. 
+
+This is optional, as you can easily write the chapters in the main document, but it helps separating chapters between group members. Note that the chapters will not compile individually!

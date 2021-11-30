@@ -1,0 +1,27 @@
+
+## Debugging R Code
+
+While the advantages of this template are obvious (looks great, conventient support of equations, tables and figures), programming is prone to errors which won't happen if you work with WYSIWYG software (e.g. Word).
+Even worse, the combination of R Code and text in this document has two sources of error, that is the R Code itself and the typesetting RMarkdown/LaTeX.
+
+![Faces of debugging. Source: [Allison Horst.](https://github.com/allisonhorst/stats-illustrations)](FIGURES/debugging.jpg)
+
+When you want to knit the document, these two sources of error can be annoying.
+First, it is reasonable to rule out R errors.
+To do this, run each chunk separately by clicking on the `play` button on the top right or press Ctrl+Shift+Enter in the chunk.
+The output below will tell you if the chunk runs smoothly.
+Make sure to eradicate all potential R errors this way.[^5]
+**Either way, make sure to tread the error message closely, pasting the error text to Google is usually helpful.**
+
+[^5]: A common error which won't show up this way happens if you have a pipe `%>%` at the end of a code chunk.
+
+## Debugging LaTeX issues
+
+Unfortunately, the error messages for LaTeX errors are not always straightforward, users typically separate informative from non-informative errors.
+In most cases, the errors are helpful, for example:
+
+![Debugging LaTeX errors.](FIGURES/LaTeX_error.PNG)
+
+"Could not find bibliography file: BIB/wexample_bibliography.bib" means that there is probably something wrong with the bib-file I provided, there is obviously a typo.
+Unfortunately, RMarkdown **almost always** tells you that you have no LaTeX installation.
+This is not true if you followed the instructions before downloading this template.

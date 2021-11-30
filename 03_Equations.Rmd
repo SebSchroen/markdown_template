@@ -1,0 +1,45 @@
+
+## Inline equations
+
+RMarkdown and LaTex are the perfect combination for theses with math equations.
+In this case, RMarkdown relies on the syntax of LaTeX when typesetting equations, so it is hard to distinguish between the two languages.
+To add an equation to the text, simply use $e = mc^2$.
+There are many more expressions, just download the corresponding cheat sheet:
+
+[LaTeX cheat sheet](https://wch.github.io/latexsheet/latexsheet.pdf)
+
+## Block equations
+
+Sometimes, equations are too central to be written in a line of text.
+In this case, use block equations.
+RMarkdown does this by doing the following:
+
+    $$ \overline{x} = \frac{1}{N} \sum_{i = 1}{N} x_i $$
+
+Once you write it outside a code chunk, RMarkdown is setting the equation for you:
+
+$$ \overline{x} = \frac{1}{N} \sum_{i = 1}{N} x_i $$
+
+This has one major disadvantage, namely that there are no numbers for the equations.
+Numbered equations are useful if you want to refer to the equation later on.
+
+Since the syntax above is 99% LaTeX anyway, just use the native LaTeX equation environment:
+
+    \begin{equation} 
+      \label{equation_arithmetic_mean}
+      \overline{x} = \frac{1}{N} \sum_{i = 1}{N} x_i 
+    \end{equation}
+
+The result is the same, but you get a numbered equation: \begin{equation} 
+  \label{equation_arithmetic_mean}
+  \overline{x} = \frac{1}{N} \sum_{i = 1}{N} x_i 
+\end{equation}
+
+If you want to deactivate enumeration, use equation\* within the braces.
+Use the label to refer to this important equation by using `\eqref{label}`.[^1]
+Equation \eqref{equation_arithmetic_mean} is the arithmetic mean.
+There are other equation environments, e.g. array for more complicated expressions.
+
+[^1]: `\eqref{label}` directly wraps the equation number with parentheses.
+    `\ref{label}` can be used for all kinds of cross-referencing.
+    This is pure LaTeX, doing this in Markdown would require additional packages.
