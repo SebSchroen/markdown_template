@@ -1,0 +1,10 @@
+# Additional LaTeX features
+
+Some experienced LaTeX users might feel that the basic functions of this template are insufficient.
+To add packages, just add them to the extra dependencies in the header in the following way:
+
+    extra_dependencies:
+        - dcolumn
+        - newpackage1
+        - newpackage2
+

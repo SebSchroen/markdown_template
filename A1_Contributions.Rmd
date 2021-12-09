@@ -1,0 +1,20 @@
+If your thesis needs an appendix, simply use `\appendix` to separate the main body of your thesis from the appendix.
+The sections will have alphabetic enumeration instead of Arabic numbers to indicate appendices.
+Ideally, use `\newpage` to start the appendix on a new page.
+
+If you write as a group, one appendix should be dedicated to the contribution of each student.
+Please edit the following table accordingly to highlight which student contributed to which section:
+
+| Section | Student            |
+|--------:|--------------------|
+|       1 | Melissa Musterfrau |
+|     2.1 | Maxi Musterperson  |
+|     2.2 | Maxi Musterperson  |
+|     3.1 | Max Mustermann     |
+|     ... | ...                |
+
+Hint: Use the tablesgenerator.com for this table.
+
+Finally, please state whether you want a joint of individual evaluation of your thesis by altering the following sentence:
+
+We decided for a joint evaluation of the thesis.
